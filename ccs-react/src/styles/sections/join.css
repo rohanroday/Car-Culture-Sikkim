@@ -1,0 +1,26 @@
+/* 06 join */
+.join{padding-top:clamp(24px,4vw,56px)}
+.join .panel-box{position:relative;border:1px solid var(--line);border-radius:24px;background:var(--panel);padding:clamp(26px,5vw,72px);overflow:hidden;isolation:isolate}
+.join .panel-box::before{content:"";position:absolute;z-index:-1;right:-12%;top:-40%;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,210,31,.16) 0%,rgba(255,210,31,0) 65%);opacity:.5}
+.live.join .panel-box::before{animation:breathe 7s var(--ease-io) -2s infinite alternate}
+@keyframes breathe{from{opacity:.35}to{opacity:1}}
+.join .grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,80px);align-items:start}
+.join h2.display{font-size:clamp(2rem,4.6vw,3.9rem)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary)}
+input,select{font:inherit;font-size:1rem;color:var(--text-primary);background:var(--canvas);border:1px solid var(--line-strong);border-radius:12px;padding:14px 14px;min-height:50px;width:100%;transition:border-color .35s var(--ease-out),background-color .35s var(--ease-out)}
+input::placeholder{color:#7d8a9d}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+input[aria-invalid="true"]{border-color:var(--flag-red)}
+.err{font-size:.85rem;color:#ff8c8f;min-height:1.2em}
+form .btn{grid-column:1/-1;justify-self:start;margin-top:4px}
+.fine{grid-column:1/-1;font-size:.88rem;color:var(--text-secondary)}
+.success{display:none}
+.sent form{display:none}
+.sent .success{display:block;animation:pagein .8s var(--ease-out) both}
+.success h3{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:1.5rem;line-height:1.1}
+.success pre{font-family:var(--mono);font-size:.85rem;line-height:1.7;white-space:pre-wrap;background:var(--canvas);border:1px solid var(--line);border-radius:12px;padding:16px;margin:18px 0;color:var(--text-primary)}
+.success .row{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:860px){.join .grid{grid-template-columns:1fr}form{grid-template-columns:1fr}}

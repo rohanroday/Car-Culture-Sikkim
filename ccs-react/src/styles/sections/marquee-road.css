@@ -1,0 +1,11 @@
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:20px 0;background:rgba(20,26,35,.5)}
+.track{display:flex;width:max-content;will-change:transform}
+.track span{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(1.1rem,2vw,1.6rem);padding:0 22px;white-space:nowrap;color:var(--text-secondary)}
+.track span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--line-strong)}
+
+/* road divider: the four lines of the logo, drawn as a hairpin */
+.road{display:block;width:100%;height:auto;color:rgba(238,241,245,.55);overflow:visible}
+.road.flip{transform:scaleX(-1)}
+.road .rl{fill:none;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--d,0))}
+.road .chev{opacity:clamp(0,(var(--d,0) - .5)*5,1)}

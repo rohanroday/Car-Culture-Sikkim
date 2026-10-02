@@ -1,0 +1,16 @@
+/* shared section furniture */
+section{position:relative}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+.pad{padding-block:clamp(84px,12vw,168px)}
+h2.display{font-size:clamp(1.9rem,4.2vw,3.5rem)}
+.lede{color:var(--text-secondary);max-width:54ch}
+.js .rv{visibility:hidden}
+.lw{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em .06em .16em;margin:-.14em -.06em -.16em}
+.lw > span{display:inline-block;will-change:transform}
+
+/* prayer flag line */
+.flags{display:block;width:100%;height:64px;margin-top:-1px}
+.flags .string{fill:none;stroke:rgba(238,241,245,.4);stroke-width:1}
+.flags rect{transform-box:fill-box;transform-origin:50% 0}
+.live .flags rect{animation:flutter 4.6s var(--ease-io) infinite alternate}
+@keyframes flutter{from{transform:skewX(-7deg) scaleY(.96)}to{transform:skewX(8deg) scaleY(1.03)}}

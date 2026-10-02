@@ -1,0 +1,23 @@
+/* altitude rail: a tall scale down the right edge, the page's descent drawn live */
+.altrail{position:fixed;right:20px;top:50%;z-index:40;display:none;flex-direction:column;align-items:flex-end;gap:22px;transform:translateY(-50%);pointer-events:none;font-family:var(--mono);text-shadow:0 1px 4px rgba(5,7,12,.9)}
+.altrail .cap{display:flex;flex-direction:column;align-items:flex-end;gap:3px;font-size:.66rem;letter-spacing:.1em;line-height:1;color:var(--text-primary)}
+.altrail .cap small{font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-secondary)}
+.altrail .scale{position:relative;width:16px;height:min(52vh,470px)}
+.altrail .line{position:absolute;right:0;top:0;bottom:0;width:1px;background:rgba(238,241,245,.3)}
+.altrail .fill{position:absolute;right:-.5px;top:0;bottom:0;width:2px;border-radius:2px;background:var(--accent);transform-origin:50% 100%;transform:scaleY(.47);will-change:transform}
+.altrail .tick{position:absolute;right:0;width:6px;height:1px;background:rgba(238,241,245,.5);transform-origin:100% 50%;transition:width .45s var(--ease-out),background-color .45s var(--ease-out)}
+.altrail .tick.major{width:12px;background:rgba(238,241,245,.8)}
+.altrail .tick b{position:absolute;right:20px;top:0;transform:translateY(-50%);font-weight:400;font-size:.58rem;letter-spacing:.1em;color:var(--text-secondary);white-space:nowrap;transition:opacity .35s var(--ease-out)}
+.altrail .tick.near{width:18px;background:var(--accent)}
+.altrail .tick.near b{opacity:0}
+.altrail .mark{position:absolute;right:-4px;top:-13px;display:flex;align-items:center;gap:9px;height:26px;will-change:transform}
+.altrail .tag{padding:6px 9px;border-radius:8px;background:rgba(8,11,16,.86);border:1px solid rgba(255,210,31,.5);font-size:.74rem;letter-spacing:.06em;color:var(--text-primary);white-space:nowrap;text-shadow:none}
+.altrail .tag b{font-weight:500;color:var(--accent)}
+.altrail .dot{position:relative;flex:none;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.altrail .dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--accent);opacity:0;animation:ping 3.2s var(--ease-out) -1s infinite}
+@keyframes ping{0%{opacity:.7;transform:scale(.5)}70%,100%{opacity:0;transform:scale(1.5)}}
+.nolibs .altrail,.menu-open .altrail{display:none!important}
+@media (min-width:1200px) and (min-height:620px){
+  .altrail{display:flex}
+  .nav .alt{display:none}
+}

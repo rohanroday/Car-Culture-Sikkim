@@ -1,0 +1,28 @@
+/* 02 the drives */
+.drives .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(36px,5vw,64px)}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .5s var(--ease-out)}
+.card:hover{border-color:var(--line-strong)}
+.media{position:relative;overflow:hidden;background:#0a0d12}
+.media img,.media video{width:100%;height:100%;object-fit:cover;will-change:transform}
+.media img{filter:saturate(.92) contrast(1.05)}
+.media video{position:absolute;inset:0;opacity:0;transition:opacity .8s var(--ease-out)}
+.media.playing video{opacity:1}
+.media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(12,16,22,0) 55%,rgba(12,16,22,.5) 100%)}
+.card .body{padding:clamp(20px,2.6vw,34px)}
+.card h3{font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;line-height:1.08;font-size:clamp(1.15rem,1.9vw,1.6rem);margin:12px 0 12px}
+.card p{color:var(--text-secondary);max-width:52ch}
+.watch{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-weight:600;font-size:.92rem;text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:4px;transition:border-color .35s var(--ease-out),gap .35s var(--ease-out)}
+.watch:hover{border-color:var(--accent);gap:14px}
+.watch svg{width:14px;height:14px}
+.feature{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.feature .media{min-height:clamp(260px,30vw,420px);height:100%}
+.feature .media img{position:absolute;inset:0;height:100%}
+.feature .body{display:flex;flex-direction:column;justify-content:center}
+.feature .trio{display:flex;align-items:flex-start;gap:8px;margin-top:22px}
+.feature .trio img{width:calc((100% - 16px)/3);aspect-ratio:3/2;object-fit:cover;border-radius:8px;border:1px solid var(--line);filter:saturate(.92) contrast(1.05)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
+.pair .media{aspect-ratio:16/9}
+.pair .card.text-only .body{padding-top:clamp(28px,3.4vw,44px)}
+.bigno{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:clamp(3rem,7vw,5.6rem);line-height:.9;color:transparent;-webkit-text-stroke:1px var(--line-strong);margin-bottom:26px;transition:-webkit-text-stroke-color .6s var(--ease-out)}
+.card:hover .bigno{-webkit-text-stroke-color:var(--accent)}
+@media (max-width:860px){.drives .head,.feature{grid-template-columns:1fr}.pair{grid-template-columns:1fr}}

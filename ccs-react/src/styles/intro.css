@@ -1,0 +1,14 @@
+/* smooth scroll and the opening curtain */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+.intro{position:fixed;inset:0;z-index:90;background:var(--canvas);display:none;flex-direction:column;align-items:center;justify-content:center;gap:26px;animation:introGone .01s 3.4s forwards}
+.js .intro{display:flex}
+.rm .intro,.nolibs .intro{display:none}
+.intro .mark{width:min(220px,46vw);height:auto}
+.intro .bar{width:min(220px,46vw);height:2px;background:var(--line);overflow:hidden}
+.intro .bar i{display:block;height:100%;background:var(--accent);transform-origin:0 50%}
+@keyframes introGone{to{visibility:hidden;opacity:0}}
+.nolibs .hero{display:none}
+.nolibs .hero-static{display:flex}
+.nolibs .hero-static::before{content:"";position:absolute;inset:0 0 auto 0;height:var(--filmh);z-index:-2;background:url("/assets/hero-still-m.jpg") center/cover no-repeat}

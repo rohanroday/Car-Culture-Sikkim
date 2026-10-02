@@ -1,0 +1,8 @@
+/* footer */
+footer{border-top:1px solid var(--line);padding:clamp(48px,7vw,88px) 0 34px}
+footer .top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-end}
+footer .logo img{width:min(240px,60vw);height:auto}
+footer ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;flex-wrap:wrap}
+footer ul a{text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color .35s var(--ease-out)}
+footer ul a:hover{border-color:var(--accent)}
+footer .base{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;align-items:baseline;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:.85rem;color:var(--text-secondary)}

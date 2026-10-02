@@ -1,0 +1,12 @@
+/* 04 the crew */
+.crew .grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
+.collage{position:relative;padding:0 0 16% 0}
+.collage figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0a0d12}
+.collage img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:saturate(.9) contrast(1.06)}
+.collage .a{width:84%}
+.collage .b{position:absolute;right:0;bottom:0;width:56%;box-shadow:0 30px 70px rgba(5,7,12,.6)}
+.collage .tag{position:absolute;left:0;bottom:6%;}
+.merch{margin-top:30px;padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:var(--panel);display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.merch strong{display:block;font-family:var(--display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:1.05rem}
+.merch span{color:var(--text-secondary);font-size:.95rem}
+@media (max-width:860px){.crew .grid{grid-template-columns:1fr}}

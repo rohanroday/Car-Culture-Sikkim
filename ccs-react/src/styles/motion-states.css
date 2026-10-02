@@ -1,0 +1,11 @@
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+
+/* reduced motion: every choreographed thing in its finished state */
+.rm *:not(.intro),.rm *::before,.rm *::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+.rm{scroll-behavior:auto}
+.rm .rv{visibility:visible!important;opacity:1!important;transform:none!important}
+.rm .road{--d:1!important}
+.rm .statement{--r:2!important}
+.rm .code li{opacity:1;transform:none}
+.rm .cue svg{transform:none}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
